@@ -23,31 +23,42 @@ const Form = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
+    
         // Convert selected books to a string
         const selectedBookNames = selectedBooks.map(book => book.label).join(', ');
-
+    
         const serviceID = "service_uf9880o";  // Replace with your EmailJS Service ID
         const adminTemplateID = "template_yddkn78"; // Email template for admin
         const userTemplateID = "template_8qrdbkm"; // Email template for user
-        const publicKey = "IkNI4K_INjT97kCvb";  // Replace with EmailJS Public Key
-
-        const emailParams = {
+        const publicKey = "IkNI4K_INjT97kCvb";  // Replace with EmailJS Public Key 
+    
+        // Email parameters for the admin
+        const adminEmailParams = {
             name: formData.name,
-            email: formData.email,
+            email: "aribegaius.oset@gmail.com",  // Ensure this is the correct admin email
             country: formData.country,
             address: formData.address,
             phone: formData.phone,
             book: selectedBookNames,
         };
-
+    
+        // Email parameters for the user
+        const userEmailParams = {
+            name: formData.name,
+            email: formData.email, // User's email
+            country: formData.country,
+            address: formData.address,
+            phone: formData.phone,
+            book: selectedBookNames,
+        };
+    
         // Send email to the admin
-        emailjs.send(serviceID, adminTemplateID, emailParams, publicKey)
+        emailjs.send(serviceID, adminTemplateID, adminEmailParams, publicKey)
             .then(() => {
                 console.log("Admin email sent!");
-
+    
                 // Send email to the user as confirmation
-                return emailjs.send(serviceID, userTemplateID, emailParams, publicKey);
+                return emailjs.send(serviceID, userTemplateID, userEmailParams, publicKey);
             })
             .then(() => {
                 alert("Form submitted successfully! A confirmation email has been sent.");
