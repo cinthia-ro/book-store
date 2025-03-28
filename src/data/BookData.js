@@ -1,6 +1,7 @@
 
 import book1 from '../assets/book1.jpg'
 import book2 from '../assets/book2.png'
+import book3 from '../assets/book3.png'
 
 export const  BookData=[
     {
@@ -41,6 +42,27 @@ export const  BookData=[
         'X-Ray : Not Enabled\n' +
         'Word Wise : Enabled\n' +
         'Print length : 44 pages',
+        aboutAuthor:'Faveur Gaius, born in 1974, is an engineer with a Master’s in Systems Engineering from the University of Bremen. He has over 10 years of experience and holds several patents. In 2013, he took over Jürgen Heißenbüttel, renaming it Heißenbüttel-Gaius Electric. In 2016, he founded Gaius Elektrotechnik Optimal Solutions in Bremen. He is also an author, singer-songwriter, interpreter, and event moderator.'
+
+   
+    },
+    {
+        id: 3,
+        bookTitle: "Der Wille, strategisch etwas zu bewirken",
+        author: " Faveur Gaius ",
+        price: "$15.99",
+        bookImage: book3 ,
+        bookDescription:'Entfachen Sie Ihre innere Stärke und überwinden Sie Entmutigung. In diesem inspirierenden Buch teilt der Autor tiefgreifende Geschichten von Durchhaltevermögen trotz Krankheit und Schwäche. Erfahren Sie von bemerkenswerten Individuen, wie dem Mann, der trotz Lähmung mit nur einem Finger drei Bücher schrieb, und lassen Sie sich von ihrer Entschlossenheit motivieren. Entdecken Sie, wie Visionen zu Zielen werden und der Wille zur Umsetzung zu einem bedeutenden Wandel führt. Meistern Sie Ihre Talente und gestalten Sie bewusst Ihre Wirkung. Effektivität in kleinen Schritten ist der Schlüssel, um Großes zu erreichen. Dieses Buch enthüllt die Macht klarer Visionen, zeigt den Pfad von der Vision zur Realität und erklärt, wie Opfer und Fokus notwendig sind, um bewegende Veränderungen zu erreichen.',
+        bookDetails:
+        'Einband: Taschenbuch\n' +
+        'Erscheinungsdatum: 12.09.2023\n' +
+        'Verlag : Gaius E- Opt. Sol. Ug\n' +
+        'Seitenzahl : 102\n' +
+        'Maße (L/B/H) : 21/14,8/0,6 cm\n' +
+        'Gewicht: 144 g\n' +
+        'Sprache : Deutsch, Englisch\n' +
+        'ISBN  : 978-0-217-78423-8\n' +
+        'Herstelleradresse : Email: info@bod.de\n',
         aboutAuthor:'Faveur Gaius, born in 1974, is an engineer with a Master’s in Systems Engineering from the University of Bremen. He has over 10 years of experience and holds several patents. In 2013, he took over Jürgen Heißenbüttel, renaming it Heißenbüttel-Gaius Electric. In 2016, he founded Gaius Elektrotechnik Optimal Solutions in Bremen. He is also an author, singer-songwriter, interpreter, and event moderator.'
 
    

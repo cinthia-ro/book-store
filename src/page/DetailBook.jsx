@@ -12,8 +12,8 @@ const DetailBook = () => {
 
 
   return (
-    <div className='p-16'>
-        <div className='grid grid-cols-2 gap-20'>
+    <div className='md:p-16 p-7'>
+        <div className='grid md:grid-cols-2 grid-cols-1 gap-20'>
             <div>
                 <img src={book.bookImage} className='w-[54%]' alt="" />
 
@@ -28,7 +28,7 @@ const DetailBook = () => {
 
             </div>
             <div className=''>
-                <p className='mt-5 font-semibold text-4xl'>{book.bookTitle}</p>
+                <p className='mt-5 font-semibold md:text-4xl text-3xl'>{book.bookTitle}</p>
                 <p className='mt-5 font-semibold text-2xl text-green-600'>{book.price}</p>
                 <Button buttonTitle='order now'/>
                 <p className='font-bold text-3xl mt-10'> Book Overview</p>

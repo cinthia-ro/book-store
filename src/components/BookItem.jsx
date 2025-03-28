@@ -12,7 +12,7 @@ navigate(`/Detail-Book/${id}`);
   return (
     <div>
     
-     <div className='text-center item-center justify-center w-[30%]'>
+     <div className='text-center  md:w-[55%] w-[65%] ml-10 md:ml-0  '>
          <img src={book_Image} alt="" className='' />
          <h3 className='text-[1.1rem] font-medium'>{bookTitle}</h3>
         <p>{author}</p>

@@ -7,11 +7,13 @@ const BookList = () => {
  
   
   return (
-    <div className='mt-8 text-gray-800 px-20'>
-        <h1 className='font-semibold text-5xl '>Our Book</h1>
-      <div className='grid grid-cols-2 mt-16 pb-14'>{
+    <div className='mt-8 text-gray-800 px-4 md:px-10 lg:px-20'>
+    <h1 className='font-semibold text-4xl md:text-5xl'>Our Book</h1>
+    <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 mt-16 pb-14'>{
         BookData.map((book) =>
-      (<BookItem
+      (
+    
+      <BookItem
       key={book.id}
       id= {book.id}
       bookTitle={book.bookTitle}

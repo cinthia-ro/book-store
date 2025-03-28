@@ -35,7 +35,8 @@ const Form = () => {
         const emailParams = {
             name: formData.name,
             email: formData.email,
-            location: formData.location,
+            country: formData.country,
+            address: formData.address,
             phone: formData.phone,
             book: selectedBookNames,
         };
@@ -62,12 +63,13 @@ const Form = () => {
         <div>
             {display && (
                 <div className='fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center'>
-                    <div className='bg-white p-6 rounded-lg w-[400px] shadow-lg'>
+                    <div className='bg-white p-6 rounded-lg md:w-[400px] w-[293px] shadow-lg'>
                         <h2 className='text-2xl font-semibold mb-4'>Order Book</h2>
                         <form className='flex flex-col space-y-3 text-gray-950' onSubmit={handleSubmit}>
                             <input type="text" name="name" placeholder="Full Name" required className="border p-2 rounded-md" onChange={handleChange} />
                             <input type="email" name="email" placeholder="Email Address" required className="border p-2 rounded-md" onChange={handleChange} />
-                            <input type="text" name="location" placeholder="Location" required className="border p-2 rounded-md" onChange={handleChange} />
+                            <input type="text" name="country" placeholder="Country" required className="border p-2 rounded-md" onChange={handleChange} />
+                            <input type="text" name="address" placeholder="Address" required className="border p-2 rounded-md" onChange={handleChange} />
                             <input type="tel" name="phone" placeholder="Phone Number" required className="border p-2 rounded-md" onChange={handleChange} />
 
                             <label htmlFor="book" className='text-black text-left'>Select Your Book</label>
