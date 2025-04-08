@@ -15,6 +15,7 @@ const Form = () => {
     const bookOptions = [
         { value: 'book1', label: 'Book 1' },
         { value: 'book2', label: 'Book 2' },
+        { value: 'book3', label: 'Book 3' },
     ];
 
     const handleChange = (e) => {
@@ -35,7 +36,7 @@ const Form = () => {
         // Email parameters for the admin
         const adminEmailParams = {
             name: formData.name,
-            email: "aribegaius.oset@gmail.com",  // Ensure this is the correct admin email
+            email: formData.email,  // Ensure this is the correct admin email
             country: formData.country,
             address: formData.address,
             phone: formData.phone,
