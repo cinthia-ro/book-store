@@ -11,6 +11,7 @@ const Form = () => {
         phone: '',
     });
     const [selectedBooks, setSelectedBooks] = useState([]);
+    const [bookQuantities, setBookQuantities] = useState({});
 
     const bookOptions = [
         { value: 'book1', label: 'Book 1' },
@@ -26,7 +27,9 @@ const Form = () => {
         e.preventDefault();
     
         // Convert selected books to a string
-        const selectedBookNames = selectedBooks.map(book => book.label).join(', ');
+        const selectedBookDetails = selectedBooks.map(book =>
+            `${book.label} (x${bookQuantities[book.value] || 1})`
+        ).join(', ');
     
         const serviceID = "service_uf9880o";  // Replace with your EmailJS Service ID
         const adminTemplateID = "template_yddkn78"; // Email template for admin
@@ -40,17 +43,14 @@ const Form = () => {
             country: formData.country,
             address: formData.address,
             phone: formData.phone,
-            book: selectedBookNames,
+            book: selectedBookDetails,
         };
     
         // Email parameters for the user
         const userEmailParams = {
             name: formData.name,
             email: formData.email, // User's email
-            country: formData.country,
-            address: formData.address,
-            phone: formData.phone,
-            book: selectedBookNames,
+            book: selectedBookDetails,
         };
     
         // Send email to the admin
@@ -91,8 +91,32 @@ const Form = () => {
                                 options={bookOptions}
                                 className="basic-multi-select text-gray-950"
                                 classNamePrefix="select"
-                                onChange={(selected) => setSelectedBooks(selected)}
+                                onChange={(selected) => {
+                                    setSelectedBooks(selected || []);
+                                    const updatedQuantities = {};
+                                    (selected || []).forEach(book => {
+                                        updatedQuantities[book.value] = bookQuantities[book.value] || 1;
+                                    });
+                                    setBookQuantities(updatedQuantities);
+                                }}
                             />
+                            {selectedBooks.map(book => (
+                                <div key={book.value} className="flex items-center space-x-2 mt-2">
+                                    <label className='w-1/2'>{book.label}</label>
+                                    <input
+                                        type="number"
+                                        min="1"
+                                        value={bookQuantities[book.value] || 1}
+                                        onChange={(e) =>
+                                            setBookQuantities({
+                                                ...bookQuantities,
+                                                [book.value]: parseInt(e.target.value) || 1,
+                                            })
+                                        }
+                                        className="w-1/2 border p-1 rounded-md"
+                                    />
+                                </div>
+                            ))}
 
                             <div className='flex justify-between mt-4'>
                                 <button type="button" onClick={() => setDisplay(!display)} className='bg-gray-500 text-white py-1 px-4 rounded-md'>Cancel</button>
